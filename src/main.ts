@@ -8,15 +8,14 @@ import {
   setupDeviceCheck,
   disableButton,
   enableButton,
-  buttonCategories,
   handleButtonClick,
   setupBgmSelect
 } from './ui';
 
 // 音声管理クラス
 class AudioManager {
-  private bgm: Howl | null = null;
-  private phraseButtons: Howl[];
+  private bgm: any | null = null;
+  private phraseButtons: any[];
   private currentBgmName: string = 'なし';
   private bgmList: { name: string; path: string; displayName: string }[] = [
     { name: 'how-to-get-high-legally', path: './audio/bgm/How to Get High Legally(Instrumental).mp3', displayName: 'How to Get High Legally' },
@@ -31,293 +30,84 @@ class AudioManager {
     // すべての音声ファイルの初期化（カテゴリ順）
     this.phraseButtons = [
       // カテゴリ1（ポートレートモード）
-      new Howl({
-        src: ['./audio/portrait/スポーツ経験がない男.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/いままであんまり運動の経験がない男.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/部活に入った経験のない男.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/ガチで危機感持った方がいいと思う.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/◎△＄♪×￥●＆％＃？！.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/テストステロン.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/必要な分だけ生成される.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/portrait/落ち着けって.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ2（短い言葉・感嘆詞）
-      new Howl({
-        src: ['./audio/landscape/やばい.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/でぇ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/マジでぇ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/確実に.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/だから.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/反対にぃ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/最後にぃ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/お前さぁ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ3（危機感・モチベーション関連）
-      new Howl({
-        src: ['./audio/landscape/危機感がないから.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/危機感に…かけすぎてる.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/危機感を持ってた.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/モチベーションがないですぅ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/頑張れないですぅ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/やらなきゃやばいから.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/やろうと思ってもできない理由.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ4（思い出・記憶関連）
-      new Howl({
-        src: ['./audio/landscape/その時の状況思い出せって.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/思い出せって.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/よーく思い出せって.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/も一回思い出せって.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/何かに対して頑張ったのいつ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/その状況において.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ5（弱さ・問題点の指摘）
-      new Howl({
-        src: ['./audio/landscape/メンタルが弱い.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/肉体的にも弱い.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/楽して生きていけるから.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/欲しい物なんでも手に入るから.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/シコって満足できる.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/瞬間の快楽に浸ってる.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ6（質問・疑問形）
-      new Howl({
-        src: ['./audio/landscape/教えて.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/何か理由ある？.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/でも少なくとも.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/もうちょっと伸びてからでいいよ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/言えることは.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/そうじゃないの.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ7（強さ・男らしさ関連）
-      new Howl({
-        src: ['./audio/landscape/男として強くなかったら.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/昔の男たちは違った.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/一人でイギリス行ったし.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/イブラヒモヴィッチ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/ケツに火をつけろって.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/しぬほど.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      // カテゴリ8（その他・長いセリフ）
-      new Howl({
-        src: ['./audio/landscape/家族守れなかったんだよ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/人生に一度は.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/敵に攻められて.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/好きってところ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/気持ちよく.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/ドーパミン.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/もうもはや.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/間違い無いでしょ.mp3'],
-        volume: 1.0,
-        preload: true
-      }),
-      new Howl({
-        src: ['./audio/landscape/努力が出来ません.mp3'],
-        volume: 1.0,
-        preload: true
-      })
+      new Howl({ src: ['./audio/portrait/YouTuberおもんないっすよね.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/いいやお前の事誰が好きやねん.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/ええ事ないねんやろ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/お前の事誰が好きなん？.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/お察しします.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/ただぁ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/普段生活してて.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/portrait/野党.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ2
+      new Howl({ src: ['./audio/landscape/7代目ひょうきん者.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ｱﾗｰｽ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/うーん.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/うわああ　あああああ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/えぇ〜.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ええ？.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/エェヘヘヘヘヘ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/えぐぅー.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/気持ち悪い.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ3
+      new Howl({ src: ['./audio/landscape/えっぐ〜.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/えっとー.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ｴﾍﾕｳｹﾞｾﾞｲﾒｰｼ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/おおええーい.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ｵｯｼｪｯｼｪｯｼｪｰｽ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ｵﾅｶｯﾂﾌﾞｼﾃｰｽ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/お前やん雑魚.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/嘘です.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/嘘ですけどね.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ4
+      new Howl({ src: ['./audio/landscape/お前足遅いんじゃ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/お母さんに電話しました.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/お笑いとは違ってさ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/キッズダンサーの笑顔.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/キモいのぉー.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ｷｬｯﾂｧｲﾈｴ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/威勢いいですねコイツ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/日付変更線で遊ぶな.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/有馬記念で血祭り騒ぎ.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ5
+      new Howl({ src: ['./audio/landscape/クリオネの泳ぎ方.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/さておき.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ｻﾞﾏｱﾐﾛ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/シンクロ経験者.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/た〜すけて〜.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ﾀﾉｼﾐ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/本当の幸せって.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/本日の有馬記念の.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/好きってところ.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ6
+      new Howl({ src: ['./audio/landscape/デブ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/でも次の月に死んだ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/なあ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/なにかってゆうたら.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/なんでムラムラきとんねんお前.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ねー.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/無理無理無理ぃ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/言うとる場合か.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/鳥獣ギガ不足.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ7
+      new Howl({ src: ['./audio/landscape/ヒィー怖.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/ボケエエエエエ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/まあどっちでもええねんそんなもん.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/やかましわドアホ.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/よーしよしよし.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/リアス式海岸.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/買いました.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/賢いから断った.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/馬券を.mp3'], volume: 1.0, preload: true }),
+      // カテゴリ8
+      new Howl({ src: ['./audio/landscape/わけわからん.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/世にも珍しく.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/中央分離帯.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/何笑ってんねん.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/余命を巻いた.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/信者「ハゲタコ、太客、エビフライ」.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/億借金すると.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/冷房強すぎる.mp3'], volume: 1.0, preload: true }),
+      new Howl({ src: ['./audio/landscape/医者も短めに言うとけ.mp3'], volume: 1.0, preload: true })
     ];
   }
 
@@ -357,69 +147,84 @@ class AudioManager {
     
     const audioFiles = [
       // カテゴリ1（ポートレートモード）
-      'スポーツ経験がない男.mp3',
-      'いままであんまり運動の経験がない男.mp3',
-      '部活に入った経験のない男.mp3',
-      'ガチで危機感持った方がいいと思う.mp3',
-      '◎△＄♪×￥●＆％＃？！.mp3',
-      'テストステロン.mp3',
-      '必要な分だけ生成される.mp3',
-      '落ち着けって.mp3',
-      // カテゴリ2（短い言葉・感嘆詞）
-      'やばい.mp3',
-      'でぇ.mp3',
-      'マジでぇ.mp3',
-      '確実に.mp3',
-      'だから.mp3',
-      '反対にぃ.mp3',
-      '最後にぃ.mp3',
-      'お前さぁ.mp3',
-      // カテゴリ3（危機感・モチベーション関連）
-      '危機感がないから.mp3',
-      '危機感に…かけすぎてる.mp3',
-      '危機感を持ってた.mp3',
-      'モチベーションがないですぅ.mp3',
-      '頑張れないですぅ.mp3',
-      'やらなきゃやばいから.mp3',
-      'やろうと思ってもできない理由.mp3',
-      // カテゴリ4（思い出・記憶関連）
-      'その時の状況思い出せって.mp3',
-      '思い出せって.mp3',
-      'よーく思い出せって.mp3',
-      'も一回思い出せって.mp3',
-      '何かに対して頑張ったのいつ.mp3',
-      'その状況において.mp3',
-      // カテゴリ5（弱さ・問題点の指摘）
-      'メンタルが弱い.mp3',
-      '肉体的にも弱い.mp3',
-      '楽して生きていけるから.mp3',
-      '欲しい物なんでも手に入るから.mp3',
-      'シコって満足できる.mp3',
-      '瞬間の快楽に浸ってる.mp3',
-      // カテゴリ6（質問・疑問形）
-      '教えて.mp3',
-      '何か理由ある？.mp3',
-      'でも少なくとも.mp3',
-      'もうちょっと伸びてからでいいよ.mp3',
-      '言えることは.mp3',
-      'そうじゃないの.mp3',
-      // カテゴリ7（強さ・男らしさ関連）
-      '男として強くなかったら.mp3',
-      '昔の男たちは違った.mp3',
-      '一人でイギリス行ったし.mp3',
-      'イブラヒモヴィッチ.mp3',
-      'ケツに火をつけろって.mp3',
-      'しぬほど.mp3',
-      // カテゴリ8（その他・長いセリフ）
-      '家族守れなかったんだよ.mp3',
-      '人生に一度は.mp3',
-      '敵に攻められて.mp3',
+      'YouTuberおもんないっすよね.mp3',
+      'いいやお前の事誰が好きやねん.mp3',
+      'ええ事ないねんやろ.mp3',
+      'お前の事誰が好きなん？.mp3',
+      'お察しします.mp3',
+      'ただぁ.mp3',
+      '普段生活してて.mp3',
+      '野党.mp3',
+      // カテゴリ2
+      '7代目ひょうきん者.mp3',
+      'ｱﾗｰｽ.mp3',
+      'うーん.mp3',
+      'うわああ　あああああ.mp3',
+      'えぇ〜.mp3',
+      'ええ？.mp3',
+      'エェヘヘヘヘヘ.mp3',
+      'えぐぅー.mp3',
+      '気持ち悪い.mp3',
+      // カテゴリ3
+      'えっぐ〜.mp3',
+      'えっとー.mp3',
+      'ｴﾍﾕｳｹﾞｾﾞｲﾒｰｼ.mp3',
+      'おおええーい.mp3',
+      'ｵｯｼｪｯｼｪｯｼｪｰｽ.mp3',
+      'ｵﾅｶｯﾂﾌﾞｼﾃｰｽ.mp3',
+      'お前やん雑魚.mp3',
+      '嘘です.mp3',
+      '嘘ですけどね.mp3',
+      // カテゴリ4
+      'お前足遅いんじゃ.mp3',
+      'お母さんに電話しました.mp3',
+      'お笑いとは違ってさ.mp3',
+      'キッズダンサーの笑顔.mp3',
+      'キモいのぉー.mp3',
+      'ｷｬｯﾂｧｲﾈｴ.mp3',
+      '威勢いいですねコイツ.mp3',
+      '日付変更線で遊ぶな.mp3',
+      '有馬記念で血祭り騒ぎ.mp3',
+      // カテゴリ5
+      'クリオネの泳ぎ方.mp3',
+      'さておき.mp3',
+      'ｻﾞﾏｱﾐﾛ.mp3',
+      'シンクロ経験者.mp3',
+      'た〜すけて〜.mp3',
+      'ﾀﾉｼﾐ.mp3',
+      '本当の幸せって.mp3',
+      '本日の有馬記念の.mp3',
       '好きってところ.mp3',
-      '気持ちよく.mp3',
-      'ドーパミン.mp3',
-      'もうもはや.mp3',
-      '間違い無いでしょ.mp3',
-      '努力が出来ません.mp3'
+      // カテゴリ6
+      'デブ.mp3',
+      'でも次の月に死んだ.mp3',
+      'なあ.mp3',
+      'なにかってゆうたら.mp3',
+      'なんでムラムラきとんねんお前.mp3',
+      'ねー.mp3',
+      '無理無理無理ぃ.mp3',
+      '言うとる場合か.mp3',
+      '鳥獣ギガ不足.mp3',
+      // カテゴリ7
+      'ヒィー怖.mp3',
+      'ボケエエエエエ.mp3',
+      'まあどっちでもええねんそんなもん.mp3',
+      'やかましわドアホ.mp3',
+      'よーしよしよし.mp3',
+      'リアス式海岸.mp3',
+      '買いました.mp3',
+      '賢いから断った.mp3',
+      '馬券を.mp3',
+      // カテゴリ8
+      'わけわからん.mp3',
+      '世にも珍しく.mp3',
+      '中央分離帯.mp3',
+      '何笑ってんねん.mp3',
+      '余命を巻いた.mp3',
+      '信者「ハゲタコ、太客、エビフライ」.mp3',
+      '億借金すると.mp3',
+      '冷房強すぎる.mp3',
+      '医者も短めに言うとけ.mp3'
     ];
     return audioFiles.indexOf(baseFileName);
   }
@@ -438,12 +243,12 @@ class AudioManager {
         volume: 0.7,
         loop: true,
         preload: true,
-        onloaderror: (id, error) => {
+        onloaderror: (_id: number, error: unknown) => {
           console.error('BGM読み込みエラー:', error);
           this.currentBgmName = '読み込みエラー';
           this.updateBgmInfo();
         },
-        onplayerror: (id, error) => {
+        onplayerror: (_id: number, error: unknown) => {
           console.error('BGM再生エラー:', error);
           this.currentBgmName = '再生エラー';
           this.updateBgmInfo();
@@ -491,7 +296,7 @@ class AudioManager {
 }
 
 // アプリケーションクラス
-class GeorgeVoiceApp {
+class SosinaVoiceApp {
   private audioManager: AudioManager;
   private isLandscapeMode: boolean = false;
 
@@ -590,7 +395,7 @@ class GeorgeVoiceApp {
   // ランドスケープモード用のボタンハンドラー設定
   private setupLandscapeButtonHandlers(): void {
     // 既存のhandleButtonClickをオーバーライド
-    const originalHandleButtonClick = handleButtonClick;
+    const originalHandleButtonClick = handleButtonClick; void originalHandleButtonClick;
     
     // グローバルなhandleButtonClickを再定義
     (window as any).handleLandscapeButtonClick = (buttonData: any) => {
@@ -612,5 +417,5 @@ class GeorgeVoiceApp {
 
 // アプリケーションの初期化
 document.addEventListener('DOMContentLoaded', () => {
-  new GeorgeVoiceApp();
+  new SosinaVoiceApp();
 });

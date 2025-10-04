@@ -1,7 +1,7 @@
 {
-  "name": "george-voice-web",
+  "name": "sosina-button-web",
   "version": "1.0.0",
-  "description": "ジョージボイスWebサービス - メンズコーチの名言・音声を楽しめるスマートフォン専用Webサービス",
+  "description": "粗品ボタン - 粗品の音声を楽しめるスマートフォン専用Webサービス",
   "type": "module",
   "scripts": {
     "dev": "vite",

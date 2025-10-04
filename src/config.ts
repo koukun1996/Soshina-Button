@@ -41,10 +41,10 @@ export interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-  appName: 'Coach Button Skeleton',
-  description: 'Drop in your voice clips, BGM, and imagery to launch instantly.',
+  appName: '粗品ボタン',
+  description: '粗品の音声クリップとBGM、画像を使えるテンプレート',
   portrait: {
-    imageSrc: '/images/george-censored.jpg',
+    imageSrc: '/images/sosina2.jpg',
     imageAlt: 'Sample portrait image',
     buttons: [
       {
@@ -71,7 +71,7 @@ export const appConfig: AppConfig = {
     ]
   },
   landscape: {
-    imageSrc: '/images/george-censored-landscape.jpg',
+    imageSrc: '/images/sosina2.jpg',
     imageAlt: 'Sample landscape image',
     categories: [
       {

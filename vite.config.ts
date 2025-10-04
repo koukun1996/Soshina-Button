@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/men-s-coach-Button/', // GitHub Pages用のベースパス
+  base: '/Soshina-Button/', // GitHub Pages用のベースパス
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
@@ -23,28 +23,28 @@ export default defineConfig({
         ]
       },
       manifest: {
-        name: 'ジョージボタン',
-        short_name: 'ジョージボタン',
-        description: 'ジョージ ‑ メンズコーチ‑ の名言・音声を楽しめるWebサービス',
+        name: '粗品ボタン',
+        short_name: '粗品ボタン',
+        description: '粗品の音声を楽しめるWebサービス',
         theme_color: '#000000',
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
         icons: [
           {
-            src: '/men-s-coach-Button/images/george-censored.jpg',
+            src: '/Soshina-Button/images/sosina2.jpg',
             sizes: '192x192',
             type: 'image/jpeg',
             purpose: 'any maskable'
           },
           {
-            src: '/men-s-coach-Button/images/george-censored.jpg',
+            src: '/Soshina-Button/images/sosina2.jpg',
             sizes: '512x512',
             type: 'image/jpeg',
             purpose: 'any maskable'
           },
           {
-            src: '/men-s-coach-Button/favicon.svg',
+            src: '/Soshina-Button/favicon.svg',
             sizes: 'any',
             type: 'image/svg+xml'
           }

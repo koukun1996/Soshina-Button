@@ -1,5 +1,3 @@
-import { Howl } from 'howler';
-
 // DOM要素の取得
 export const elements = {
   portraitMode: document.getElementById('portrait-mode') as HTMLDivElement,
@@ -20,76 +18,91 @@ export const elements = {
 // ボタンカテゴリの定義
 export const buttonCategories = {
   1: [
-    { id: 1, text: 'スポーツ経験がない男', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/portrait/スポーツ経験がない男.mp3' },
-    { id: 2, text: 'いままであんまり運動の経験がない男', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/portrait/いままであんまり運動の経験がない男.mp3' },
-    { id: 3, text: '部活に入った経験のない男', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/portrait/部活に入った経験のない男.mp3' },
-    { id: 4, text: 'ガチで危機感持った方がいいと思う', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/portrait/ガチで危機感持った方がいいと思う.mp3' },
-    { id: 5, text: '◎△＄♪×￥●＆％＃？！', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/portrait/◎△＄♪×￥●＆％＃？！.mp3' },
-    { id: 6, text: 'テストステロン', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/portrait/テストステロン.mp3' },
-    { id: 7, text: '必要な分だけ生成される', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/portrait/必要な分だけ生成される.mp3' },
-    { id: 8, text: '落ち着けって', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/portrait/落ち着けって.mp3' }
+    { id: 1, text: 'YouTuberおもんないっすよね', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/portrait/YouTuberおもんないっすよね.mp3' },
+    { id: 2, text: 'いいやお前の事誰が好きやねん', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/portrait/いいやお前の事誰が好きやねん.mp3' },
+    { id: 3, text: 'ええ事ないねんやろ', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/portrait/ええ事ないねんやろ.mp3' },
+    { id: 4, text: 'お前の事誰が好きなん？', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/portrait/お前の事誰が好きなん？.mp3' },
+    { id: 5, text: 'お察しします', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/portrait/お察しします.mp3' },
+    { id: 6, text: 'ただぁ', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/portrait/ただぁ.mp3' },
+    { id: 7, text: '普段生活してて', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/portrait/普段生活してて.mp3' },
+    { id: 8, text: '野党', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/portrait/野党.mp3' }
   ],
   2: [
-    { id: 9, text: 'やばい', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/やばい.mp3' },
-    { id: 10, text: 'でぇ', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/でぇ.mp3' },
-    { id: 11, text: 'マジでぇ', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/マジでぇ.mp3' },
-    { id: 12, text: '確実に', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/確実に.mp3' },
-    { id: 13, text: 'だから', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/だから.mp3' },
-    { id: 14, text: '反対にぃ', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/反対にぃ.mp3' },
-    { id: 15, text: '最後にぃ', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/最後にぃ.mp3' },
-    { id: 16, text: 'お前さぁ', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/お前さぁ.mp3' }
+    { id: 9, text: '7代目ひょうきん者', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/7代目ひょうきん者.mp3' },
+    { id: 10, text: 'ｱﾗｰｽ', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/ｱﾗｰｽ.mp3' },
+    { id: 11, text: 'うーん', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/うーん.mp3' },
+    { id: 12, text: 'うわああ　あああああ', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/うわああ　あああああ.mp3' },
+    { id: 13, text: 'えぇ〜', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/えぇ〜.mp3' },
+    { id: 14, text: 'ええ？', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/ええ？.mp3' },
+    { id: 15, text: 'エェヘヘヘヘヘ', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/エェヘヘヘヘヘ.mp3' },
+    { id: 16, text: 'えぐぅー', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/えぐぅー.mp3' },
+    { id: 57, text: '気持ち悪い', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/気持ち悪い.mp3' }
   ],
   3: [
-    { id: 17, text: '危機感がないから', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/危機感がないから.mp3' },
-    { id: 18, text: '危機感に…かけすぎてる', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/危機感に…かけすぎてる.mp3' },
-    { id: 19, text: '危機感を持ってた', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/危機感を持ってた.mp3' },
-    { id: 20, text: 'モチベーションがないですぅ', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/モチベーションがないですぅ.mp3' },
-    { id: 21, text: '頑張れないですぅ', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/頑張れないですぅ.mp3' },
-    { id: 22, text: 'やらなきゃやばいから', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/やらなきゃやばいから.mp3' },
-    { id: 23, text: 'やろうと思ってもできない理由', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/やろうと思ってもできない理由.mp3' }
+    { id: 17, text: 'えっぐ〜', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/えっぐ〜.mp3' },
+    { id: 18, text: 'えっとー', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/えっとー.mp3' },
+    { id: 19, text: 'ｴﾍﾕｳｹﾞｾﾞｲﾒｰｼ', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/ｴﾍﾕｳｹﾞｾﾞｲﾒｰｼ.mp3' },
+    { id: 20, text: 'おおええーい', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/おおええーい.mp3' },
+    { id: 21, text: 'ｵｯｼｪｯｼｪｯｼｪｰｽ', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/ｵｯｼｪｯｼｪｯｼｪｰｽ.mp3' },
+    { id: 22, text: 'ｵﾅｶｯﾂﾌﾞｼﾃｰｽ', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/ｵﾅｶｯﾂﾌﾞｼﾃｰｽ.mp3' },
+    { id: 23, text: 'お前やん雑魚', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/お前やん雑魚.mp3' },
+    { id: 58, text: '嘘です', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/嘘です.mp3' },
+    { id: 59, text: '嘘ですけどね', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/嘘ですけどね.mp3' }
   ],
   4: [
-    { id: 24, text: 'その時の状況思い出せって', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/その時の状況思い出せって.mp3' },
-    { id: 25, text: '思い出せって', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/思い出せって.mp3' },
-    { id: 26, text: 'よーく思い出せって', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/よーく思い出せって.mp3' },
-    { id: 27, text: 'も一回思い出せって', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/も一回思い出せって.mp3' },
-    { id: 28, text: '何かに対して頑張ったのいつ', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/何かに対して頑張ったのいつ.mp3' },
-    { id: 29, text: 'その状況において', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/その状況において.mp3' }
+    { id: 24, text: 'お前足遅いんじゃ', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/お前足遅いんじゃ.mp3' },
+    { id: 25, text: 'お母さんに電話しました', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/お母さんに電話しました.mp3' },
+    { id: 26, text: 'お笑いとは違ってさ', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/お笑いとは違ってさ.mp3' },
+    { id: 27, text: 'キッズダンサーの笑顔', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/キッズダンサーの笑顔.mp3' },
+    { id: 28, text: 'キモいのぉー', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/キモいのぉー.mp3' },
+    { id: 29, text: 'ｷｬｯﾂｧｲﾈｴ', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/ｷｬｯﾂｧｲﾈｴ.mp3' },
+    { id: 60, text: '威勢いいですねコイツ', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/威勢いいですねコイツ.mp3' },
+    { id: 61, text: '日付変更線で遊ぶな', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/日付変更線で遊ぶな.mp3' },
+    { id: 62, text: '有馬記念で血祭り騒ぎ', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/有馬記念で血祭り騒ぎ.mp3' }
   ],
   5: [
-    { id: 30, text: 'メンタルが弱い', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/メンタルが弱い.mp3' },
-    { id: 31, text: '肉体的にも弱い', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/肉体的にも弱い.mp3' },
-    { id: 32, text: '楽して生きていけるから', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/楽して生きていけるから.mp3' },
-    { id: 33, text: '欲しい物なんでも手に入るから', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/欲しい物なんでも手に入るから.mp3' },
-    { id: 34, text: 'シコって満足できる', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/シコって満足できる.mp3' },
-    { id: 35, text: '瞬間の快楽に浸ってる', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/瞬間の快楽に浸ってる.mp3' }
+    { id: 30, text: 'クリオネの泳ぎ方', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/クリオネの泳ぎ方.mp3' },
+    { id: 31, text: 'さておき', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/さておき.mp3' },
+    { id: 32, text: 'ｻﾞﾏｱﾐﾛ', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/ｻﾞﾏｱﾐﾛ.mp3' },
+    { id: 33, text: 'シンクロ経験者', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/シンクロ経験者.mp3' },
+    { id: 34, text: 'た〜すけて〜', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/た〜すけて〜.mp3' },
+    { id: 35, text: 'ﾀﾉｼﾐ', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/ﾀﾉｼﾐ.mp3' },
+    { id: 63, text: '本当の幸せって', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/本当の幸せって.mp3' },
+    { id: 64, text: '本日の有馬記念の', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/本日の有馬記念の.mp3' },
+    { id: 71, text: '好きってところ', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/好きってところ.mp3' }
   ],
   6: [
-    { id: 36, text: '教えて', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/教えて.mp3' },
-    { id: 37, text: '何か理由ある？', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/何か理由ある？.mp3' },
-    { id: 38, text: 'でも少なくとも', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/でも少なくとも.mp3' },
-    { id: 39, text: 'もうちょっと伸びてからでいいよ', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/もうちょっと伸びてからでいいよ.mp3' },
-    { id: 40, text: '言えることは', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/言えることは.mp3' },
-    { id: 41, text: 'そうじゃないの', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/そうじゃないの.mp3' }
+    { id: 36, text: 'デブ', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/デブ.mp3' },
+    { id: 37, text: 'でも次の月に死んだ', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/でも次の月に死んだ.mp3' },
+    { id: 38, text: 'なあ', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/なあ.mp3' },
+    { id: 39, text: 'なにかってゆうたら', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/なにかってゆうたら.mp3' },
+    { id: 40, text: 'なんでムラムラきとんねんお前', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/なんでムラムラきとんねんお前.mp3' },
+    { id: 41, text: 'ねー', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/ねー.mp3' },
+    { id: 65, text: '無理無理無理ぃ', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/無理無理無理ぃ.mp3' },
+    { id: 66, text: '言うとる場合か', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/言うとる場合か.mp3' },
+    { id: 67, text: '鳥獣ギガ不足', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/鳥獣ギガ不足.mp3' }
   ],
   7: [
-    { id: 42, text: '男として強くなかったら', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/男として強くなかったら.mp3' },
-    { id: 43, text: '昔の男たちは違った', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/昔の男たちは違った.mp3' },
-    { id: 44, text: '一人でイギリス行ったし', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/一人でイギリス行ったし.mp3' },
-    { id: 45, text: 'イブラヒモヴィッチ', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/イブラヒモヴィッチ.mp3' },
-    { id: 46, text: 'ケツに火をつけろって', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/ケツに火をつけろって.mp3' },
-    { id: 47, text: 'しぬほど', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/しぬほど.mp3' }
+    { id: 42, text: 'ヒィー怖', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/ヒィー怖.mp3' },
+    { id: 43, text: 'ボケエエエエエ', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/ボケエエエエエ.mp3' },
+    { id: 44, text: 'まあどっちでもええねんそんなもん', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/まあどっちでもええねんそんなもん.mp3' },
+    { id: 45, text: 'やかましわドアホ', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/やかましわドアホ.mp3' },
+    { id: 46, text: 'よーしよしよし', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/よーしよしよし.mp3' },
+    { id: 47, text: 'リアス式海岸', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/リアス式海岸.mp3' },
+    { id: 68, text: '買いました', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/買いました.mp3' },
+    { id: 69, text: '賢いから断った', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/賢いから断った.mp3' },
+    { id: 70, text: '馬券を', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/馬券を.mp3' }
   ],
   8: [
-    { id: 48, text: '家族守れなかったんだよ', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/家族守れなかったんだよ.mp3' },
-    { id: 49, text: '人生に一度は', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/人生に一度は.mp3' },
-    { id: 50, text: '敵に攻められて', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/敵に攻められて.mp3' },
-    { id: 51, text: '好きってところ', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/好きってところ.mp3' },
-    { id: 52, text: '気持ちよく', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/気持ちよく.mp3' },
-    { id: 53, text: 'ドーパミン', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/ドーパミン.mp3' },
-    { id: 54, text: 'もうもはや', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/もうもはや.mp3' },
-    { id: 55, text: '間違い無いでしょ', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/間違い無いでしょ.mp3' },
-    { id: 56, text: '努力が出来ません', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/努力が出来ません.mp3' }
+    { id: 48, text: 'わけわからん', color: 'bg-red-600', hoverColor: 'hover:bg-red-700', audio: './audio/landscape/わけわからん.mp3' },
+    { id: 49, text: '世にも珍しく', color: 'bg-blue-600', hoverColor: 'hover:bg-blue-700', audio: './audio/landscape/世にも珍しく.mp3' },
+    { id: 50, text: '中央分離帯', color: 'bg-green-600', hoverColor: 'hover:bg-green-700', audio: './audio/landscape/中央分離帯.mp3' },
+    { id: 51, text: '何笑ってんねん', color: 'bg-yellow-600', hoverColor: 'hover:bg-yellow-700', audio: './audio/landscape/何笑ってんねん.mp3' },
+    { id: 52, text: '余命を巻いた', color: 'bg-purple-600', hoverColor: 'hover:bg-purple-700', audio: './audio/landscape/余命を巻いた.mp3' },
+    { id: 53, text: '信者「ハゲタコ、太客、エビフライ」', color: 'bg-pink-600', hoverColor: 'hover:bg-pink-700', audio: './audio/landscape/信者「ハゲタコ、太客、エビフライ」.mp3' },
+    { id: 54, text: '億借金すると', color: 'bg-indigo-600', hoverColor: 'hover:bg-indigo-700', audio: './audio/landscape/億借金すると.mp3' },
+    { id: 55, text: '冷房強すぎる', color: 'bg-teal-600', hoverColor: 'hover:bg-teal-700', audio: './audio/landscape/冷房強すぎる.mp3' },
+    { id: 56, text: '医者も短めに言うとけ', color: 'bg-orange-600', hoverColor: 'hover:bg-orange-700', audio: './audio/landscape/医者も短めに言うとけ.mp3' }
   ]
 };
 
